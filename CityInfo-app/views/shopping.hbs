@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shopping.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="MainPage.css">
+    <title>Shopping</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+        <a class="navbar-brand" href="/">Cluj Napoca</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto ">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Navigate
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/restaurants">Restaurants</a>
+                        <a class="dropdown-item" href="/events">Events</a>
+                        <a class="dropdown-item" href="/shopping">Shopping</a>
+                        <a class="dropdown-item" href="/mobility">Mobility</a>
+                        <a class="dropdown-item" href="/booking">Booking</a>
+                        <a class="dropdown-item" href="/visiting">Visiting</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Essentials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact-us">Contact</a>
+                </li>
+                {{#if user}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/auth/logout">Sign out</a>
+                    </li>
+                {{else}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Sign up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Sign in</a>
+                    </li>
+                {{/if}}
+            </ul>
+        </div>
+
+    </nav>
+</div>
+
+<header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active" style="background-image: url('https://wallpaperaccess.com/full/518054.jpg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 class="display-4"></h3>
+                    <p class="lead"></p>
+                </div>
+            </div>
+            <!-- Slide Two - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('https://hotelplatinia.ro/wp-content/uploads/2018/03/2017_04_platinia_catalinhladi-6649.jpg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 class="display-4"></h3>
+                    <p class="lead"></p>
+                </div>
+            </div>
+            <!-- Slide Three - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('https://cdn-thumbor.immofinanz.com/3v6IshS6IzUr0VVlLqDe4i7E5mQ=/1920x1080/filters:quality(90)/https%3A//cdn.immofinanz.com/uploads/production/5e21a7dddee6e56db91bce1c/vivocj-2309-entrance-1.jpg')">
+                <h3 class="display-4"></h3>
+                <p class="lead"></p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    </div>
+</header>
+
+<!-- Page Content -->
+<div class="malls">
+  <a href="https://vivo-shopping.com/ro/cluj-napoca">
+  <div style="width: 50%; float:left">
+    <div class="box big">
+      <div class="imgBx">
+     <!--<img src="https://cdn.cluj.com/cluj/vivo-1.jpg">-->
+     <img src="Vivo.jpg">
+     <div class="content content-big">
+      <div>
+        <h2></h2>
+      </div>
+    </div>
+    </div>
+ </div>
+</div>
+</a>
+
+  <a href="http://iuliusmall.com/cluj/">
+  <div style="width: 50%; float:right">
+    <div class="box big">
+      <div class="imgBx">
+     <img src="https://iuliusmall.com/cluj/wp-content/uploads/2016/11/iulius-mall-sigla.jpg">
+     <div class="content content-big">
+      <div>
+        <h2></h2>
+      </div>
+    </div>
+   </div>
+ </div>
+  </div>
+</a>
+</div>
+    <section class="py-5">
+    <div class="container">
+        <!-- Page Heading -->
+        <h1 class="my-4">Shops
+            <small>-Cluj</small>
+        </h1>
+        <h3 class="my-4">
+            Clothing
+        </h3>
+
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="box">
+                        <div class="imgBx">
+                              <img class="card-img-top" src="http://iuliusmall.com/cluj/wp-content/uploads/2019/11/TH-Kids-store-Cluj-1024x531-768x398.jpg" width="1" height="200">
+                            <div class="content">
+                              <div>
+                                <h2>Tommy</h2>
+                                <p>The store is located in Iulius Mall, see
+                                <a href="tommykids.png" target="_Blank">the map</a>
+                              </p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Tommy Hilfiger</a>
+                        </h4>
+                        <p class="card-text">The new Tommy Hilfiger location has a bright and airy design, which reflects the brand's new global concept. The store is modern, but retains the classic style, with iconic brand colors. Parents will find inspiration here for children's outfits, the store combining clothing that combines fashion with practical style and versatility, these are suitable for young fashion enthusiasts to have the necessary comfort for any kind of activity.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="box">
+                        <div class="imgBx">
+                                <img class="card-img-top" src="https://cdn-thumbor.immofinanz.com/9HW2tO_04gYBlWZ5ws-0jhlouiQ=/0x0:1920x1080/1920x1080/filters:quality(90)/https%3A//cdn.immofinanz.com/uploads/production/5e21a7dddee6e56db91bce1c/vivo-front-magazine-octombrie-2020_13_10_2020_vlad-cupsa__vl34240.jpg" width="400" height="200">
+                                <div class="content">
+                              <div>
+                                <h2>Massimo Dutti</h2>
+                                <p>The store is located in Iulius Mall, see
+                                <a href="massimo.png" target="_Blank">the map</a>
+                              </p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Massimo Dutti</a>
+                        </h4>
+                        <p class="card-text">Massimo Dutti offers basic, contemporary styles in state-of-the-art materials. The fabrics are always of high quality and, at the same time, practical and comfortable. Refined textures, 100% natural materials and innovative blends result in an impeccable look and the highest comfort.
+                            Massimo Dutti stores are located in first-class retail locations and are created taking into account the comfort of buyers. Personalized support is a key component of in-store customer service policy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="box">
+                        <div class="imgBx">
+                                <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGhprSy-7pOuvVyyLALbv-8iiYbcBM3gwQ4A&usqp=CAU" width="400" height="200">
+                            <div class="content">
+                              <div>
+                                <h2>Peek&Cloppenburg</h2>
+                                <p>The store is located in Vivo, see
+                                <a href="peek.png" target="_Blank">the map</a>
+                              </p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Peek&Cloppenburg</a>
+                        </h4>
+                        <p class="card-text">The Best of Fashion department contains a range of top casual brands, including S.Oliver, Tom Tailor, and Jake * s for women, plus McNeal and Calvin Klein for men. The original shops perfectly illustrate the style of Christian Berg, McNeal or Tommy Hilfiger. A generously sized premium department showcases the latest fashion trends for men and women through exclusive designer brands, including Boss, Marc Cain Collection, Napapijri, Karl Lagerfeld, Tigha, Armani Exchange, JOOP!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="box">
+                        <div class="imgBx">
+                                <img class="card-img-top" src="https://produsinardeal.ro/wp-content/uploads/2020/07/Calvin-Klein-Cluj-scaled.jpg" width="400" height="200">
+                            <div class="content">
+                              <div>
+                                <h2>Calvin Klein Jeans</h2>
+                                <p>The store is located in Iulius Mall, see
+                                <a href="calvinklein.png" target="_Blank">the map</a>
+                              </p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Calvin Klein Jeans</a>
+                        </h4>
+                        <p class="card-text">CALVIN KLEIN is a global lifestyle brand that exemplifies bold, progressive ideals and a seductive aesthetic. The company aims to convey emotion and inspire the audience using exciting images and surprising lines that awaken the senses. Founded in 1968 by Calvin Klein and his business partner, Barry Schwartz, the company has built its reputation as a leader in the American fashion industry through aesthetics, simple, clean and innovative models.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="box">
+                        <div class="imgBx">
+                                <a href="#"><img class="card-img-top" src="https://cmedia.romaniatv.net/image/202007/full/marc_opolo_01_57689200.jpeg" width="400" height="200"></a>
+                            <div class="content">
+                              <div>
+                                <h2>Marc O'Polo</h2>
+                                <p>The store is located in Iulius Mall, see
+                                <a href="marcopolo.png" target="_Blank">the map</a>
+                              </p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Marc O'Polo</a>
+                        </h4>
+                        <p class="card-text">The international brand with Scandinavian roots Marc O’Polo, creates clothes for the followers of the premium casual style and is a standard for the segment it represents. Founded in Stockholm in 1967, the brand now includes the Marc O’Polo Modern Casual, Denim, Shoes and Accessories Marc O’Polo collections, as well as the licensed ones.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="box">
+                        <div class="imgBx">
+                                <a href="#"><img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR345S7GpMYnf0FcJRmRNknOphbewd0SAcgw&usqp=CAU" width="400" height="200"></a>
+                            <div class="content">
+                              <div>
+                                <h2>H&M</h2>
+                                <p>The store is located in Iulius Mall, see
+                                <a href="hm.png" target="_Blank">the map</a>
+                              </p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">H&M</a>
+                        </h4>
+                        <p class="card-text">H&M represents fashion and quality at the best price, in a sustainable way. Hennes & Mauritz AB (H&M) is a Swedish brand since 1947 that has a wide range of products. They are divided into a number of different concepts, for women, teenagers and children.
+                            H&M is accessible at VIVO! Cluj-Napoca near the entrance 2.
+                            Come to H&M and enjoy stylish collections for the whole family every season.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="my-4">Footwear</h3>
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="box">
+                        <div class="imgBx">
+                                <a href="#"><img class="card-img-top" src="https://cdn-thumbor.immofinanz.com/ZMfvvxLVwwTKWx7EU8086Ouo3-U=/0x0:1920x1080/1920x1080/filters:quality(90)/https%3A//cdn.immofinanz.com/uploads/production/5e21a7dddee6e56db91bce1c/benvenuti-3.jpg" width="400" height="200"></a>
+                            <div class="content">
+                              <div>
+                                <h2>Benvenuti</h2>
+                                <p>The store is located in Iulius Mall, see
+                                  <a href="benvenuti.png" target="_Blank">the map</a>
+                                </p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Benvenuti</a>
+                        </h4>
+                        <p class="card-text">Benvenuti, a true Made in Italy, the perfect combination of meticulousness, experience and perpetual stylistic search is the accent that completes, customizes and enlivens your clothing. Selected in the most prestigious profile exhibitions in the world (Milan and Riva del Garda), Benvenuti products make up the image of an elaborate, creative, innovative and exuberant personal style. The brands of BENVENUTI footwear and leather goods stores: ENZO BERTINI, PEPE JEANS, WRANGLER, STEVE MADDEN or BENVENUTI, bring, every time, the newest and most expressive trends.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="box">
+                        <div class="imgBx">
+                                <a href="#"><img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4IWjHlO5abJpsAU02ps_l01F4syqV9D7HCA&usqp=CAU" width="400" height="200"></a>
+                            <div class="content">
+                              <div>
+                                <h2>Enzo Bertini</h2>
+                                <p>The store is located in Vivo, see
+                                <a href="enzo.png" target="_Blank">the map</a>
+                              </p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Enzo Bertini</a>
+                        </h4>
+                        <p class="card-text">The ENZO BERTINI store was created for those who appreciate refinement, quality, fashion, good taste, for the modern, strong woman, concerned with her personal image and the quality of her shoes and accessories.
+                            Each item in the collections of DKNY, PEPE JEANS, CK CALVIN KLEIN, ROBERTO CAVALLI, BLUMARINE, VOILE BLANCHE, GANT, GUESS, KARL LAGERFELD, HOGAN, STEVE MADDEN, PREMIATA, NAPAPIJRI, TRUSSARDI JEANS, WIERGER BERT and PIERRE CERT created as a true style statement, with a memorable and easily recognizable personality.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="box">
+                        <div class="imgBx">
+                                <a href="#"><img class="card-img-top" src="https://cdn.officeshoes.ws/userfiles_ro/Polus.jpg" width="400" height="200"></a>
+                            <div class="content">
+                              <div>
+                                <h2>Office Shoes</h2>
+                                <p>The store is located in Iulius Mall, see
+                                <a href="office.png" target="_Blank">the map</a>
+                              </p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Office Shoes</a>
+                        </h4>
+                        <p class="card-text">In the OFFICE SHOES online store you have everything in one place: the trendiest casual and sports shoes, outdoor and hiking models, boots, boots and boots for the cold season, platforms and heeled shoes for any occasion, slippers, sneakers, sandals and ballerinas, all at the best price! See our new spring-summer collection, where you will find international brands such as Lacoste, Caterpillar, Skechers, Glove, Lauren Ralph Lauren, Polo Ralph Lauren, Tommy Hilfiger, Converse, Vans, Kitten, New Balance, Timberland, Hunter, Geox, Vans and more.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="my-4">Jewelry, Accessory</h3>
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="box">
+                        <div class="imgBx">
+                                <a href="#"><img class="card-img-top" src="https://cdn-thumbor.immofinanz.com/WdXbnVHLJ7P1VwckwkwpLVvXW-0=/0x0:1920x1080/1920x1080/filters:quality(90)/https%3A//cdn.immofinanz.com/uploads/production/5e21a7dddee6e56db91bce1c/pandora.jpg" width="400" height="200"></a>
+                            <div class="content">
+                              <div>
+                                <h2>Pandora</h2>
+                                <p>The store is located in Iulius Mall, see
+                                <a href="pandora.png" target="_Blank">the map</a>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Pandora</a>
+                        </h4>
+                        <p class="card-text">Collection after collection, PANDORA jewelry invites you to rediscover yourself and reinvent yourself. The PANDORA bracelet keeps your dearest moments close: the suitcase-shaped talisman that reminds you of your honeymoon, the stroller-shaped one that marks the unique moment when you held your first child in your arms or the stiletto talisman that doesn't let you forget that , first of all, you are a woman and that elegance springs from attitude.
+                            PANDORA jewelry is sold in over 70 countries on 6 continents through more than 10,000 outlets, of which about 700 are stores that sell exclusively PANDORA. The most popular charm (angel-shaped) has sold over 3.5 million copies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="box">
+                        <div class="imgBx">
+                                <a href="#"><img class="card-img-top" src="https://cdn-thumbor.immofinanz.com/fvY4R4p29vjHLFrXBic9EXVhPqQ=/16x0:1701x948/1920x1080/filters:quality(90)/https%3A//cdn.immofinanz.com/uploads/production/5e21a7dddee6e56db91bce1c/swarovski.jpg" width="400" height="200"></a>
+                            <div class="content">
+                              <div>
+                                <h2>Swarovski</h2>
+                                <p>The store is located in Iulius Mall, see
+                                <a href="swarovsky.png" target="_Blank">the map</a>
+                              </p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Swarovski</a>
+                        </h4>
+                        <p class="card-text">Swarovski is a world leader in the manufacture of high-precision cut crystals. Founded over 100 years ago, this family-owned company supplies the highest quality crystal components to the fashion, jewelry and design industry. Swarovski's own designs are distributed through a worldwide network of its own and partners' outlets.
+                            Several times a year, Swarovski launches collections of jewelry and accessories of a classic elegance but also extremely modern and trendy. Sparkling objects for decorations and collections, gift ideas for any occasion and accessories for home and living room of a captivating beauty complete the range of products. Enthusiastic collectors can become members of the Swarovski Crystal Society, where they can purchase an exclusive limited edition piece each year. In addition, they have the opportunity to participate in special events.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="box">
+                        <div class="imgBx">
+                                <a href="#"><img class="card-img-top" src="https://cdn-thumbor.immofinanz.com/EmOh6xrGn4yhuLgvwcBtOmKCGJ8=/0x0:1920x1080/1920x1080/filters:quality(90)/https%3A//cdn.immofinanz.com/uploads/production/5e21a7dddee6e56db91bce1c/teilor.jpg" width="400" height="200"></a>
+                            <div class="content">
+                              <div>
+                                <h2>Teilor</h2>
+                                <p>The store is located in Iulius Mall, see
+                                  <a href="teilor.png" target="_Blank">the map</a>
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Teilor</a>
+                        </h4>
+                        <p class="card-text">Teilor is a jewelry brand with over 15 years of experience in the metals and precious stones industry. Starting from the idea that a piece of jewelry must be authentic and durable, Teilor has emphasized, since its establishment, the quality of the products and services it offers. Currently, there is an online store and a network of Teilor stores spread throughout the country, the most recent being opened in Cluj Napoca.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="my-4">Cosmetics, Perfumes</h3>
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="box">
+                        <div class="imgBx">
+                                <a href="#"><img class="card-img-top" src="https://cdn-thumbor.immofinanz.com/aMhoMKPCj7QwiJWLW6RwbT6RU3o=/0x0:1920x1080/1920x1080/filters:quality(90)/https%3A//cdn.immofinanz.com/uploads/production/5e21a7dddee6e56db91bce1c/vivo-front-magazine-octombrie-2020_13_10_2020_vlad-cupsa__vl34220-2.jpg" width="400" height="200"></a>
+                            <div class="content">
+                              <div>
+                                <h2>Sephora</h2>
+                                <p>The store is located in Iulius Mall, see
+                                  <a href="sephora1.png" target="_Blank">the map</a>
+                                </p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Sephora</a>
+                        </h4>
+                        <p class="card-text">SEPHORA offers customers passionate about beauty a unique experience through a selection of prestigious brands, innovative products and a revolutionary shopping concept. Sephora invites its customers to try over 10,000 amazing beauty products and enjoy personalized services at its Beauty Hubs with its beauty advisors and experts. Easily recognizable anywhere in the world, through the black and white stripes, Sephora brings under the same umbrella the most beloved beauty community in the world, providing a unique, interactive space, a playground where beauty takes on new dimensions and everything can be tried. , tested, and the products are chosen according to each person's personality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="box">
+                        <div class="imgBx">
+                                <a href="#"><img class="card-img-top" src="https://cdn-thumbor.immofinanz.com/IxjI8L72ozxAFAPZ72-e9tS3heQ=/0x0:1920x1080/1920x1080/filters:quality(90)/https%3A//cdn.immofinanz.com/uploads/production/5e21a7dddee6e56db91bce1c/douglas.jpg" width="400" height="200"></a>
+                            <div class="content">
+                              <div>
+                                <h2>Douglas</h2>
+                                <p>The store is located in Vivo, see
+                                  <a href="douglas.png" target="_Blank">the map</a>
+                                </p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Douglas</a>
+                        </h4>
+                        <p class="card-text">Douglas is one of the leading retailers in the European beauty industry, with approximately 2,500 fast-growing perfumeries and online stores in 19 European countries. Every day, approximately 20,000 dedicated beauty advisors strive to make their clients more beautiful and thus happier. Douglas' mission is to encourage its customers and followers on digital channels and to be a source of inspiration so that every second they can have confidence in living and enjoying their own beauty.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="box">
+                        <div class="imgBx">
+                                <a href="#"><img class="card-img-top" src="https://cdn-thumbor.immofinanz.com/EaZAVimfYdKKBaEURrIw5__W_DU=/0x0:1920x1080/1920x1080/filters:quality(90)/https%3A//cdn.immofinanz.com/uploads/production/5e21a7dddee6e56db91bce1c/yves-rocher.jpg" width="400" height="200"></a>
+                            <div class="content">
+                              <div>
+                                <h2>Yves Rocher</h2>
+                                <p>The store is located in Iulius Mall, see
+                                  <a href="yves.png" target="_Blank">the map</a>
+                                </p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Yves Rocher</a>
+                        </h4>
+                        <p class="card-text">Yves Rocher, Créateur de la Cosmetique Végètale ®: 50 years of performance, 50 years of passion, 50 years of inspiration, 50 years of pleasant moments spent together…
+                            These years are the testimony of the cosmetic commitment, in every moment together with the women from all over the world who chose Yves Rocher products and trusted in the beauty based on natural active principles. Over 700 products covering the entire range of cosmetics: skin and body care products, perfumes with seductive aromas, makeup with irresistible textures and colors. Professional advice and personalized advice in stores. Personalized promotional offers throughout the year, specific to each season or event, which are constantly renewed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<footer class="page-footer font-small" style="margin-top:0px;">
+
+    <div class="wrapper">
+        <div class="button">
+            <div class="icon">
+                <i class="fab fa-facebook-f"></i>
+            </div>
+            <span><a href="https://www.facebook.com/clujcom">Facebook</a></span>
+        </div>
+        <div class="button">
+            <div class="icon">
+                <i class="fab fa-twitter"></i>
+            </div>
+            <span><a href="https://www.twitter.com/">Twitter</a></span>
+        </div>
+        <div class="button">
+            <div class="icon">
+                <i class="fab fa-instagram"></i>
+            </div>
+            <span><a href="https://www.instagram.com/cluj">Instagram</a></span>
+        </div>
+    </div>
+    <div id="footerElements" class="footer-copyright text-center py-3 ele">
+        <a id="aboutUs" href="/about-us">About Us</a>
+        <a id="TaC" href="/terms-and-policy-of-use">Terms and Conditions</a>
+        <a id="PP" href="/privacy-policy">Privacy Policy</a>
+    </div>
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://NapoTech.com/">Napotech</a>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+</html>

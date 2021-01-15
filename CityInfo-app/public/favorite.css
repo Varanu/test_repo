@@ -1,0 +1,43 @@
+.heart {
+    display: inline;
+    position: absolute;
+    margin-left: 15px;
+}
+.heart:not(:checked) > input {
+    display: none;
+    position:absolute;
+    top:-9999px;
+}
+.heart:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    color:#ccc;
+    font-size: 30px;
+}
+.heart:not(:checked) > label:before {
+    content: ' ♥ ';
+/*♡*/
+}
+
+.heart > input:checked ~ label,
+.heart > input:checked ~ input {
+    color: #d10808 ;
+}
+
+
+.heart:not(:checked) > label:hover,
+.heart:not(:checked) > label:hover ~ label {
+    color: #d10808; !important;
+    /* color: #d10808 ; */
+}
+
+.heart > input:checked + label:hover,
+.heart > input:checked + label:hover ~ label,
+.heart > input:checked ~ label:hover,
+.heart > input:checked ~ label:hover ~ label,
+.heart > label:hover ~ input:checked ~ label {
+    color: #d10808 ;
+}
